@@ -45,3 +45,9 @@ $RECYCLE.BIN/
 Network Trash Folder
 Temporary Items
 .apdisk
+
+# Other
+.idea
+node_modules/
+public/javascripts/app.component.js.map
+public/javascripts/boot.js.map

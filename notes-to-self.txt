@@ -1,0 +1,42 @@
+feel free to ignore this text file as it litterally is my notes to self
+
+maybe it will eventually become some kind of documentation
+
+notes/cred
+http://requirejs.org/docs/jquery.html
+http://requirejs.org/docs/api.html#deffunc
+https://www.npmjs.com/package/http-server
+http://www.toptal.com/web/making-html5-canvas-based-game-with-angularjs-and-createjs
+
+newer
+http://www.createjs.com/demos/easeljs/spritesheet
+http://www.toptal.com/web/making-html5-canvas-based-game-with-angularjs-and-createjs
+https://bitbucket.org/vadimvera/profile/repositories
+http://goldfirestudios.com/blog/108/CanvasInput-HTML5-Canvas-Text-Input
+http://www.lostdecadegames.com/how-to-make-a-simple-html5-canvas-game/
+http://expressjs.com/en/starter/generator.html
+https://www.npmjs.com/package/http-server
+https://github.com/strongloop/express/tree/master
+https://github.com/strongloop/angular-live-set-example
+https://travis-ci.org/
+
+goin mvc
+https://www.terlici.com/2014/08/25/best-practices-express-structure.html
+https://github.com/strongloop/express/tree/master/examples/mvc
+https://github.com/strongloop/express/tree/master
+https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API/Drawing_DOM_objects_into_a_canvas
+http://buildnewgames.com/real-time-multiplayer/
+https://angular.io/
+http://plnkr.co/
+http://cheapass.com/node/83
+http://www.tamas.io/online-card-game-with-node-js-and-socket-io-episode-1/
+https://angular.io/docs/ts/latest/quickstart.html
+https://github.com/angular/angular/issues/4997
+https://docs.npmjs.com/files/package.json
+
+todo
+ng
+front end (ie trigger two.js)
+http://learnangular2.com/events/
+typescript is some bs
+http://jade-lang.com/
