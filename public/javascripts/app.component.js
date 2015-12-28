@@ -18,24 +18,28 @@ System.register(['angular2/core'], function(exports_1) {
         execute: function() {
             AppComponent = (function () {
                 function AppComponent() {
+                    this.consoleText = 'This is the console.';
+                    this.clickCount = 1;
                 }
-                AppComponent.prototype.draw = function (event) {
-                    console.log('bro u clicked me');
-                    //todo: call service for a card and mention something on game console.
-                };
-                AppComponent.prototype.getRandomQuote = function () {
-                    var _this = this;
-                    this.http.get('http://localhost:3000/api/draw')
-                        .map(function (res) { return res.text(); })
-                        .subscribe(function (data) { return _this.randomQuote = data; }, function (err) { return _this.logError(err); }, function () { return console.log('Random Quote Complete'); });
-                };
-                AppComponent.prototype.logError = function (err) {
-                    console.error('There was an error: ' + err);
+                AppComponent.prototype.draw = function () {
+                    if (this.clickCount = 1) {
+                        this.consoleText = 'bro u clicked me.';
+                    }
+                    else if (this.clickCount < 4) {
+                        this.consoleText = 'so u clicked me again...but y?';
+                    }
+                    else {
+                        this.consoleText = 'yo u clicked me again. This is like the ' + this.clickCount + 'th time already, what gives? I don\'t have any services yet ICYMI';
+                    }
+                    this.clickCount++;
                 };
                 AppComponent = __decorate([
                     core_1.Component({
                         selector: 'ng-main-game-component',
-                        template: "\n  <br>\n  <canvas id='game'></canvas>\n  <br>\n  <button id='draw' (click)='draw()'>Click to Draw a Card</button>\n  <br>\n  Console:\n  <div id='console'>This is the console.</div>\n  "
+                        template: "\n  <br>\n  <canvas id='game'></canvas>\n  <br>\n  <button id='draw' (click)='draw()'>Click to Draw a Card</button>\n  <br>\n  Console:\n  <div id='console'>{{consoleText}}</div>\n  ",
+                        styles: [],
+                        directives: [],
+                        providers: []
                     }), 
                     __metadata('design:paramtypes', [])
                 ], AppComponent);

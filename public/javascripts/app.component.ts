@@ -1,6 +1,4 @@
 import {Component} from 'angular2/core';
-import {CORE_DIRECTIVES, FORM_DIRECTIVES} from 'angular2/core';
-import {Http, Headers} from 'angular2/http';
 
 @Component({
 	selector: 'ng-main-game-component',
@@ -11,27 +9,25 @@ import {Http, Headers} from 'angular2/http';
   <button id='draw' (click)='draw()'>Click to Draw a Card</button>
   <br>
   Console:
-  <div id='console'>This is the console.</div>
-  `
+  <div id='console'>{{consoleText}}</div>
+  `,
+  styles: [],
+  directives: [],
+  providers: []
 })
 
-export class AppComponent {
-  draw(event) {
-    console.log('bro u clicked me');
-    //todo: call service for a card and mention something on game console.
-  }
-  
-  getRandomQuote() {
-  this.http.get('http://localhost:3000/api/draw')
-    .map(res => res.text())
-    .subscribe(
-      data => this.randomQuote = data,
-      err => this.logError(err),
-      () => console.log('Random Quote Complete')
-    );
-  }
+export class AppComponent implements OnInit {
+  consoleText: string = 'This is the console.';
+  clickCount: number = 1;
 
-  logError(err) {
-    console.error('There was an error: ' + err);
+  draw() {
+    if (this.clickCount = 1) {
+      this.consoleText = 'bro u clicked me.';
+    } else if (this.clickCount < 4) {
+      this.consoleText = 'so u clicked me again...but y?';
+    } else {
+      this.consoleText = 'yo u clicked me again. This is like the ' + this.clickCount + 'th time already, what gives? I don\'t have any services yet ICYMI';
+    }
+    this.clickCount++;
   }
 }
