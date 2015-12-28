@@ -27,8 +27,9 @@ You could call it an EAN stack ;)
 Have a suggestion for this npm module?  Submit an issue.
 
 ## Todo
-1 Implement draw card service
-1 Implement basic game logic
-1 Game rules document
-1 Better UI, ideally with Canvas
-1 Multiplayer! (V1)
+1. Implement draw card service
+1. Implement basic game logic
+1. Game rules document
+1. Better UI, ideally with Canvas
+1. Multiplayer! (V1)
+1. Seperate 3 modules: card-game framework (this repo), specific card game rules, swappable cards module for custom decks (you could have the same rules with or without face cards, for example.)

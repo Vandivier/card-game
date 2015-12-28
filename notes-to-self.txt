@@ -40,3 +40,9 @@ front end (ie trigger two.js)
 http://learnangular2.com/events/
 typescript is some bs
 http://jade-lang.com/
+
+
+it would be better if i can split out a generic  'draw a card and take a turn' module, then implement my game as a seperate module (child or sibling?)
+eg generic-card-game imports specific-card-game-rules
+maybe make the cards themselves a seperate module. i think i should support png sprite and maybe svg (sprites?) later for the cards.
+there should be a css rule for each card. so each card gets a unique id or class and implicit in that is a style. Primarily the 52 cards but custom-extendable later.
