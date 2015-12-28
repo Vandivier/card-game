@@ -20,7 +20,7 @@ System.register(['angular2/core'], function(exports_1) {
                 function DrawCardService() {
                 }
                 DrawCardService.prototype.draw = function () {
-                    return 'test';
+                    return Promise.resolve('drawCard.service.ts response succesful.');
                 };
                 DrawCardService = __decorate([
                     core_1.Injectable(), 

@@ -18,20 +18,12 @@ import {DrawCardService} from './drawCard.service';
 })
 
 export class AppComponent {
-  consoleText: string = 'This is the console.';
+  consoleText: any = 'This is the console.';
   clickCount: number = 0;
   
   constructor(private _drawCardService: DrawCardService) {}
 
   draw() {
-    this.clickCount++;
-    console.log(this.clickCount);
-    if (this.clickCount === 1) {
-      this.consoleText = 'bro u clicked me.';
-    } else if (this.clickCount < 4) {
-      this.consoleText = 'so u clicked me again...but y?';
-    } else {
-      this.consoleText = 'yo u clicked me again. This is like the ' + this.clickCount + 'th time already, what gives? I don\'t have any services yet ICYMI';
-    }
+    this._drawCardService.draw().then(respTxt => this.consoleText = respTxt);
   }
 }

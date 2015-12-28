@@ -26,17 +26,8 @@ System.register(['angular2/core', './drawCard.service'], function(exports_1) {
                     this.clickCount = 0;
                 }
                 AppComponent.prototype.draw = function () {
-                    this.clickCount++;
-                    console.log(this.clickCount);
-                    if (this.clickCount === 1) {
-                        this.consoleText = 'bro u clicked me.';
-                    }
-                    else if (this.clickCount < 4) {
-                        this.consoleText = 'so u clicked me again...but y?';
-                    }
-                    else {
-                        this.consoleText = 'yo u clicked me again. This is like the ' + this.clickCount + 'th time already, what gives? I don\'t have any services yet ICYMI';
-                    }
+                    var _this = this;
+                    this._drawCardService.draw().then(function (respTxt) { return _this.consoleText = respTxt; });
                 };
                 AppComponent = __decorate([
                     core_1.Component({
