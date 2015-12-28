@@ -1,4 +1,4 @@
-System.register(['angular2/core'], function(exports_1) {
+System.register(['angular2/core', './drawCard.service'], function(exports_1) {
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
         var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
         if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -8,21 +8,27 @@ System.register(['angular2/core'], function(exports_1) {
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1;
+    var core_1, drawCard_service_1;
     var AppComponent;
     return {
         setters:[
             function (core_1_1) {
                 core_1 = core_1_1;
+            },
+            function (drawCard_service_1_1) {
+                drawCard_service_1 = drawCard_service_1_1;
             }],
         execute: function() {
             AppComponent = (function () {
-                function AppComponent() {
+                function AppComponent(_drawCardService) {
+                    this._drawCardService = _drawCardService;
                     this.consoleText = 'This is the console.';
-                    this.clickCount = 1;
+                    this.clickCount = 0;
                 }
                 AppComponent.prototype.draw = function () {
-                    if (this.clickCount = 1) {
+                    this.clickCount++;
+                    console.log(this.clickCount);
+                    if (this.clickCount === 1) {
                         this.consoleText = 'bro u clicked me.';
                     }
                     else if (this.clickCount < 4) {
@@ -31,7 +37,6 @@ System.register(['angular2/core'], function(exports_1) {
                     else {
                         this.consoleText = 'yo u clicked me again. This is like the ' + this.clickCount + 'th time already, what gives? I don\'t have any services yet ICYMI';
                     }
-                    this.clickCount++;
                 };
                 AppComponent = __decorate([
                     core_1.Component({
@@ -39,9 +44,9 @@ System.register(['angular2/core'], function(exports_1) {
                         template: "\n  <br>\n  <canvas id='game'></canvas>\n  <br>\n  <button id='draw' (click)='draw()'>Click to Draw a Card</button>\n  <br>\n  Console:\n  <div id='console'>{{consoleText}}</div>\n  ",
                         styles: [],
                         directives: [],
-                        providers: []
+                        providers: [drawCard_service_1.DrawCardService]
                     }), 
-                    __metadata('design:paramtypes', [])
+                    __metadata('design:paramtypes', [drawCard_service_1.DrawCardService])
                 ], AppComponent);
                 return AppComponent;
             })();

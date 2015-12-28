@@ -1,4 +1,5 @@
 import {Component} from 'angular2/core';
+import {DrawCardService} from './drawCard.service';
 
 @Component({
 	selector: 'ng-main-game-component',
@@ -13,21 +14,24 @@ import {Component} from 'angular2/core';
   `,
   styles: [],
   directives: [],
-  providers: []
+  providers: [DrawCardService]
 })
 
-export class AppComponent implements OnInit {
+export class AppComponent {
   consoleText: string = 'This is the console.';
-  clickCount: number = 1;
+  clickCount: number = 0;
+  
+  constructor(private _drawCardService: DrawCardService) {}
 
   draw() {
-    if (this.clickCount = 1) {
+    this.clickCount++;
+    console.log(this.clickCount);
+    if (this.clickCount === 1) {
       this.consoleText = 'bro u clicked me.';
     } else if (this.clickCount < 4) {
       this.consoleText = 'so u clicked me again...but y?';
     } else {
       this.consoleText = 'yo u clicked me again. This is like the ' + this.clickCount + 'th time already, what gives? I don\'t have any services yet ICYMI';
     }
-    this.clickCount++;
   }
 }
