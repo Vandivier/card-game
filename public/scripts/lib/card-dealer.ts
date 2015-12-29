@@ -1,25 +1,23 @@
-//import {Component} from 'angular2/core';
-
-export class AppComponent {
+export class Cards {
   unpack() {
-    var DeckConfig = {
-        Suit: ["Clubs", "Diamonds", "Hearts", "Spades"],
-        Rank: ["2", "3", "4", "5", "6", "7", "8", "9", "10", "Jack", "Queen", "King", "Ace"]
-    },
-    array = [];
-    
-    DeckConfig.Suit.forEach(function (suit) {
-      DeckConfig.Rank.forEach(function (rank) {
-        array.push({
-            Suit: suit,
-            Rank: rank
+  DeckConfig = {
+      Suit: ["Clubs", "Diamonds", "Hearts", "Spades"],
+      Rank: ["2", "3", "4", "5", "6", "7", "8", "9", "10", "Jack", "Queen", "King", "Ace"]
+  };
+  array = [];
+    this.DeckConfig.Suit.forEach(function (suit) {
+      this.DeckConfig.Rank.forEach(function (rank) {
+        this.array.push({
+            Suit: this.suit,
+            Rank: this.rank
         });
       });
     });
-    return array;
+    return this.array;
   }
+  
   shuffle() {
-    var array = (!input) ? this.unpack() : input,
+    array = (!input) ? this.unpack() : input,
       currentIndex = array.length,
       temporaryValue,
       randomIndex;
@@ -33,4 +31,10 @@ export class AppComponent {
     }
     return array;
   }
+  
+  test() {
+    return 'TEST-TEXT';
+  }
+  
+  test = 'TEST-TEXT-2';
 }

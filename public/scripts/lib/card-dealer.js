@@ -1,29 +1,33 @@
-//import {Component} from 'angular2/core';
 System.register([], function(exports_1) {
-    var AppComponent;
+    var Cards;
     return {
         setters:[],
         execute: function() {
-            AppComponent = (function () {
-                function AppComponent() {
+            Cards = (function () {
+                function Cards() {
+                    this.test = 'TEST-TEXT-2';
                 }
-                AppComponent.prototype.unpack = function () {
-                    var DeckConfig = {
+                Cards.prototype.unpack = function () {
+                    DeckConfig = {
                         Suit: ["Clubs", "Diamonds", "Hearts", "Spades"],
                         Rank: ["2", "3", "4", "5", "6", "7", "8", "9", "10", "Jack", "Queen", "King", "Ace"]
-                    }, array = [];
-                    DeckConfig.Suit.forEach(function (suit) {
-                        DeckConfig.Rank.forEach(function (rank) {
-                            array.push({
-                                Suit: suit,
-                                Rank: rank
+                    };
+                    array = [];
+                    this.DeckConfig.Suit.forEach(function (suit) {
+                        this.DeckConfig.Rank.forEach(function (rank) {
+                            this.array.push({
+                                Suit: this.suit,
+                                Rank: this.rank
                             });
                         });
                     });
-                    return array;
+                    return this.array;
                 };
-                AppComponent.prototype.shuffle = function () {
-                    var array = (!input) ? this.unpack() : input, currentIndex = array.length, temporaryValue, randomIndex;
+                Cards.prototype.shuffle = function () {
+                    array = (!input) ? this.unpack() : input,
+                        currentIndex = array.length,
+                        temporaryValue,
+                        randomIndex;
                     while (0 !== currentIndex) {
                         randomIndex = Math.floor(Math.random() * currentIndex);
                         currentIndex -= 1;
@@ -33,9 +37,12 @@ System.register([], function(exports_1) {
                     }
                     return array;
                 };
-                return AppComponent;
+                Cards.prototype.test = function () {
+                    return 'TEST-TEXT';
+                };
+                return Cards;
             })();
-            exports_1("AppComponent", AppComponent);
+            exports_1("Cards", Cards);
         }
     }
 });

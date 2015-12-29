@@ -22,17 +22,22 @@ System.register(['angular2/core', './drawCard.service'], function(exports_1) {
             AppComponent = (function () {
                 function AppComponent(_drawCardService) {
                     this._drawCardService = _drawCardService;
-                    this.consoleText = 'This is the console.';
+                    this.gameConsoleText = 'This is the game console.';
                     this.clickCount = 0;
                 }
+                /*
+                draw() {
+                  this._drawCardService.draw().then(respTxt => this.gameConsoleText = respTxt);
+                }
+                */
                 AppComponent.prototype.draw = function () {
-                    var _this = this;
-                    this._drawCardService.draw().then(function (respTxt) { return _this.consoleText = respTxt; });
+                    respTxt = this._drawCardService.shuffle();
+                    this.gameConsoleText = respTxt;
                 };
                 AppComponent = __decorate([
                     core_1.Component({
                         selector: 'ng-main-game-component',
-                        template: "\n  <br>\n  <canvas id='game'></canvas>\n  <br>\n  <button id='draw' (click)='draw()'>Click to Draw a Card</button>\n  <br>\n  Console:\n  <div id='console'>{{consoleText}}</div>\n  ",
+                        template: "\n  <br>\n  <canvas id='game'></canvas>\n  <br>\n  <button id='draw' (click)='draw()'>Click to Draw a Card</button>\n  <br>\n  Console:\n  <div id='console'>{{gameConsoleText}}</div>\n  ",
                         styles: [],
                         directives: [],
                         providers: [drawCard_service_1.DrawCardService]
