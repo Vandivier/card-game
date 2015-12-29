@@ -33,13 +33,7 @@ http://www.tamas.io/online-card-game-with-node-js-and-socket-io-episode-1/
 https://angular.io/docs/ts/latest/quickstart.html
 https://github.com/angular/angular/issues/4997
 https://docs.npmjs.com/files/package.json
-
-todo
-ng
-front end (ie trigger two.js)
-http://learnangular2.com/events/
-typescript is some bs
-http://jade-lang.com/
+http://stackoverflow.com/questions/24135231/how-to-use-use-external-js-in-typescript
 
 
 it would be better if i can split out a generic  'draw a card and take a turn' module, then implement my game as a seperate module (child or sibling?)

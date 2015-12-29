@@ -7,7 +7,7 @@ It's a card game based on a standard 52 card deck, but it's not poker.
 Install for node.js using npm:
 
 ``` bash
-$ npm install card-dealer
+$ npm install
 ```
 
 Serve the app:
@@ -20,6 +20,8 @@ Then visit http://localhost:3000/
 
 ## Documentation
 This will eventually be a card game. Right now it is pretty much an ng hello world with express on the back end and no db.
+
+I'm not supporting Chrome right now because it has an issue loading es6-shim. I recommend you use Firefox.
 
 You could call it an EAN stack ;)
 

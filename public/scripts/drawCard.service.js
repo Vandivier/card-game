@@ -1,4 +1,4 @@
-System.register(['angular2/core'], function(exports_1) {
+System.register(['angular2/core', './lib/card-dealer'], function(exports_1) {
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
         var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
         if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -8,19 +8,22 @@ System.register(['angular2/core'], function(exports_1) {
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1;
+    var core_1, card_dealer_1;
     var DrawCardService;
     return {
         setters:[
             function (core_1_1) {
                 core_1 = core_1_1;
+            },
+            function (card_dealer_1_1) {
+                card_dealer_1 = card_dealer_1_1;
             }],
         execute: function() {
             DrawCardService = (function () {
                 function DrawCardService() {
                 }
                 DrawCardService.prototype.draw = function () {
-                    return Promise.resolve('drawCard.service.ts response succesful.');
+                    return Promise.resolve('You drew the following card: ' + card_dealer_1.Cards.unpack());
                 };
                 DrawCardService = __decorate([
                     core_1.Injectable(), 
