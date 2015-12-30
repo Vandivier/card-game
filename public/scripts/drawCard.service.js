@@ -18,39 +18,39 @@ System.register(['angular2/core'], function(exports_1) {
         execute: function() {
             DrawCardService = (function () {
                 function DrawCardService() {
-                    this.DeckConfig = {
+                }
+                DrawCardService.prototype.draw = function () {
+                    return Promise.resolve(this.shuffle()[0]);
+                };
+                DrawCardService.prototype.standardDeck = function () {
+                    DeckConfig = {
                         Suit: ["Clubs", "Diamonds", "Hearts", "Spades"],
                         Rank: ["2", "3", "4", "5", "6", "7", "8", "9", "10", "Jack", "Queen", "King", "Ace"]
                     };
-                    this.array = [];
-                }
-                DrawCardService.prototype.draw = function () {
-                    return Promise.resolve(this.shuffle[0]);
-                };
-                DrawCardService.prototype.unpack = function () {
-                    this.DeckConfig.Suit.forEach(function (suit) {
-                        this.DeckConfig.Rank.forEach(function (rank) {
-                            this.array.push({
-                                Suit: this.suit,
-                                Rank: this.rank
+                    array = [];
+                    DeckConfig.Suit.forEach(function (suit) {
+                        DeckConfig.Rank.forEach(function (rank) {
+                            array.push({
+                                Suit: suit,
+                                Rank: rank
                             });
                         });
                     });
-                    return this.array;
-                };
-                DrawCardService.prototype.shuffle = function (input) {
-                    array = (!input) ? this.unpack() : input,
-                        currentIndex = array.length,
-                        temporaryValue,
-                        randomIndex;
-                    while (0 !== currentIndex) {
-                        randomIndex = Math.floor(Math.random() * currentIndex);
-                        currentIndex -= 1;
-                        temporaryValue = array[currentIndex];
-                        array[currentIndex] = array[randomIndex];
-                        array[randomIndex] = temporaryValue;
-                    }
                     return array;
+                };
+                DrawCardService.prototype.shuffle = function (arrayToShuffle) {
+                    this.array = (!arrayToShuffle) ? this.standardDeck() : arrayToShuffle,
+                        this.currentIndex = this.array.length,
+                        this.temporaryValue,
+                        this.randomIndex;
+                    while (0 !== this.currentIndex) {
+                        this.randomIndex = Math.floor(Math.random() * this.currentIndex);
+                        this.currentIndex -= 1;
+                        this.temporaryValue = this.array[this.currentIndex];
+                        this.array[this.currentIndex] = this.array[this.randomIndex];
+                        this.array[this.randomIndex] = this.temporaryValue;
+                    }
+                    return this.array;
                 };
                 DrawCardService.prototype.test = function () {
                     return 'DrawCardService test passed.';

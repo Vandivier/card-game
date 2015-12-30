@@ -25,14 +25,11 @@ System.register(['angular2/core', './drawCard.service'], function(exports_1) {
                     this.gameConsoleText = 'This is the game console.';
                     this.clickCount = 0;
                 }
-                /*
-                draw() {
-                  this._drawCardService.draw().then(respTxt => this.gameConsoleText = respTxt);
-                }
-                */
                 AppComponent.prototype.draw = function () {
-                    respTxt = this._drawCardService.shuffle();
-                    this.gameConsoleText = respTxt;
+                    var _this = this;
+                    this._drawCardService.draw().then(function (respTxt) { return _this.gameConsoleText = JSON.stringify(respTxt); });
+                    ;
+                    //respTxt = this._drawCardService.draw() => this.gameConsoleText = respTxt;
                 };
                 AppComponent = __decorate([
                     core_1.Component({

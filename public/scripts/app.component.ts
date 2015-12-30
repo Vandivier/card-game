@@ -22,12 +22,8 @@ export class AppComponent {
   clickCount: number = 0;
   
   constructor(private _drawCardService: DrawCardService) {}
-  /*
   draw() {
-    this._drawCardService.draw().then(respTxt => this.gameConsoleText = respTxt);
-  }
-  */
-  draw() {
-    respTxt = this._drawCardService.shuffle() => this.gameConsoleText = respTxt;
+    this._drawCardService.draw().then(respTxt => this.gameConsoleText = JSON.stringify(respTxt)));
+    //respTxt = this._drawCardService.draw() => this.gameConsoleText = respTxt;
   }
 }
