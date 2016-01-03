@@ -19,7 +19,7 @@ app.set('port', port);
  * Create HTTP server.
  */
 
-var server = server || http.createServer(app);
+var server = http.createServer(app);
 
 /**
  * Listen on provided port, on all network interfaces.
@@ -88,3 +88,33 @@ function onListening() {
     : 'port ' + addr.port;
   debug('Listening on ' + bind);
 }
+
+/**
+ * Dem sockets doe
+ */
+
+//var server = http.Server(express);
+//var server = app.listen(3000);
+//var io     = require('socket.io')(app);
+var io = require('socket.io').listen(server);
+//var io     = require('socket.io')(http);
+//var socket = require('socket.io-client');
+
+io.on('connect', function (socket) {
+  console.log('a user connected');
+  io.on('chat', function (socket) {
+    console.log('some chat...' + socket);
+  });
+  io.on('news', function (socket) {
+    console.log('some news...' + socket);
+  });
+  socket.on('chat', function (socket) {
+    console.log('some chat...' + socket);
+  });
+  socket.on('news', function (socket) {
+    console.log('some news...' + socket);
+  });
+  socket.on('disconnect', function(){
+    console.log('user disconnected');
+  });
+});

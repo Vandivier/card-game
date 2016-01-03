@@ -6,24 +6,11 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var routes = require('./routes/index');
 var users = require('./routes/users');
+var http = require('http');
 
 
 //initialize app and hook socket IO for multiplayer
-var app = require('express')();
-var http = require('http').Server(app);
-var server = require('http').Server(app);
-var io = require('socket.io')(http);
-
-//var app = require('express').createServer();
-//var io = require('socket.io')(app);
-
-io.on('connection', function (socket) {
-  console.log('a user connected');
-  socket.emit('news', { hello: 'world' });
-  socket.on('my other event', function (data) {
-    console.log(data);
-  });
-});
+var app = express();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
