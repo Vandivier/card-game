@@ -28,13 +28,16 @@ System.register(['angular2/core', './drawCard.service'], function(exports_1) {
                 AppComponent.prototype.draw = function () {
                     var _this = this;
                     this._drawCardService.draw().then(function (respTxt) { return _this.gameConsoleText = JSON.stringify(respTxt); });
-                    ;
                     //respTxt = this._drawCardService.draw() => this.gameConsoleText = respTxt;
+                };
+                AppComponent.prototype.roll = function () {
+                    var _this = this;
+                    this._drawCardService.roll().then(function (respTxt) { return _this.gameConsoleText = JSON.stringify(respTxt); });
                 };
                 AppComponent = __decorate([
                     core_1.Component({
                         selector: 'ng-main-game-component',
-                        template: "\n  <br>\n  <canvas id='game'></canvas>\n  <br>\n  <button id='draw' (click)='draw()'>Click to Draw a Card</button>\n  <br>\n  Console:\n  <div id='console'>{{gameConsoleText}}</div>\n  ",
+                        template: "\n  <br>\n  <canvas id='game'></canvas>\n  <br>\n  <button id='draw' (click)='draw()'>Click to Draw a Card</button>\n  <br>\n  <button id='roll' (click)='roll()'>Click to Roll a Die</button>\n  <br>\n  <input id='chat-text'><button id='chat-button'>Click to submit chat text.</button>\n  <br>\n  Console:\n  <div id='console'>{{gameConsoleText}}</div>\n  ",
                         styles: [],
                         directives: [],
                         providers: [drawCard_service_1.DrawCardService]

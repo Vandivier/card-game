@@ -19,7 +19,7 @@ $ npm start
 Then visit http://localhost:3000/
 
 ## Documentation
-This will eventually be a card game. Right now it is pretty much an ng hello world with express on the back end and no db.
+This will eventually be a card game. Right now you can draw a random card but it doesn't really do anything with it.
 
 I'm not supporting Chrome right now because it has an issue loading es6-shim. I recommend you use Firefox.
 
@@ -28,9 +28,15 @@ You could call it an EAN stack ;)
 ## Feature Requests
 Have a suggestion for this npm module?  Submit an issue.
 
-## Todo
+## Todo...vaguely in order
 1. Implement draw card service
-1. Implement basic game logic
+1. Use a custom deck, not just a standard poker deck
+1. Implement sockets.io
+1. Implement basic game logic (first game will be war...higher card wins)
+1. Implement persistant deck (you draw and now it's not in the deck)
+1. Implement discard pile logic and function to reshuffle discard pile into deck
+1. Implement optional logic such that all players use one deck or each player uses a seperate deck (even 2 decks of different cards, like a TCG)
+1. Maybe some sort of optional modular and extenable turn framework (but I should allow for simultaneous turns too, maybe a custom mode variable)
 1. Game rules document
 1. Better UI, ideally with Canvas
 1. Multiplayer! (V1)
