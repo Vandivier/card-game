@@ -20,10 +20,39 @@ System.register(['angular2/core', './drawCard.service'], function(exports_1) {
             }],
         execute: function() {
             AppComponent = (function () {
+                /*
+                class user {
+                  name: string;
+                  cardPlayed: string;
+                  dieRolled: number;
+                  turnOrder: number;
+                  score: number;
+                }
+                */
+                /*
+                constructor(private user: DrawCardService) {
+                  name: string;
+                  card: string;
+                }
+                */
+                //console.log('test');
                 function AppComponent(_drawCardService) {
                     this._drawCardService = _drawCardService;
                     this.gameConsoleText = 'This is the game console.';
                     this.clickCount = 0;
+                    this.users = [{
+                            name: 'player1',
+                            cardPlayed: 'aaa',
+                            dieRolled: 1
+                        }, {
+                            name: 'player2',
+                            cardPlayed: 'bbb',
+                            dieRolled: 1
+                        }, {
+                            name: 'player3',
+                            cardPlayed: 'ccc',
+                            dieRolled: 1
+                        }];
                 }
                 /* todo...right now this is untyped and oddly integrated via appLogic.js
                 chat() {
@@ -53,7 +82,7 @@ System.register(['angular2/core', './drawCard.service'], function(exports_1) {
                 AppComponent = __decorate([
                     core_1.Component({
                         selector: 'ng-main-game-component',
-                        template: "\n  <br>\n  <canvas id='game'></canvas>\n  <br>\n  <button id='draw' (click)='draw()'>Click to Draw a Card</button>\n  <br>\n  <button id='roll' (click)='roll()'>Click to Roll a Die</button>\n  <br>\n  <input id='chat-text'><button id='chat-button'>Click to submit chat text.</button>\n  <br>\n  <div id='card'>Last Card Played: {{cardPlayed}}</div>\n  <div id='die'>Last Die Rolled: {{dieRolled}}</div>\n  <br>\n  Console:\n  <div id='console'>{{gameConsoleText}}</div>\n  ",
+                        template: "\n  <br>\n  <canvas id='game'></canvas>\n  <br>\n  <button id='draw' (click)='draw()'>Click to Draw a Card</button>\n  <br>\n  <button id='roll' (click)='roll()'>Click to Roll a Die</button>\n  <br>\n  <input id='chat-text'><button id='chat-button'>Click to submit chat text.</button>\n  <br>\n  <div *ngFor=\"#user of users; #i = index\">\n    <br>{{user.name}}\n    <br>\n    <div id='card'>Last Card Played: {{user.cardPlayed}}</div>\n    <div id='die'>Last Die Rolled: {{user.dieRolled}}</div>\n    <br>\n  </div>\n  <br>\n  Console:\n  <div id='console'>{{gameConsoleText}}</div>\n  ",
                         styles: [],
                         directives: [],
                         providers: [drawCard_service_1.DrawCardService]

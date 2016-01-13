@@ -13,8 +13,13 @@ import {DrawCardService} from './drawCard.service';
   <br>
   <input id='chat-text'><button id='chat-button'>Click to submit chat text.</button>
   <br>
-  <div id='card'>Last Card Played: {{cardPlayed}}</div>
-  <div id='die'>Last Die Rolled: {{dieRolled}}</div>
+  <div *ngFor="#user of users; #i = index">
+    <br>{{user.name}}
+    <br>
+    <div id='card'>Last Card Played: {{user.cardPlayed}}</div>
+    <div id='die'>Last Die Rolled: {{user.dieRolled}}</div>
+    <br>
+  </div>
   <br>
   Console:
   <div id='console'>{{gameConsoleText}}</div>
@@ -25,8 +30,46 @@ import {DrawCardService} from './drawCard.service';
 })
 
 export class AppComponent {
-  gameConsoleText: any = 'This is the game console.';
+  gameConsoleText: string = 'This is the game console.';
   clickCount: number = 0;
+  user: {
+    name: string;
+    cardPlayed: string;
+    dieRolled: number;
+  }
+  users: user[];
+  users = [{
+    name: 'player1';
+    cardPlayed: 'aaa';
+    dieRolled: 1;
+  },{
+    name: 'player2';
+    cardPlayed: 'bbb';
+    dieRolled: 1;
+  },{
+    name: 'player3';
+    cardPlayed: 'ccc';
+    dieRolled: 1;
+  }];
+  
+  /*
+  class user {
+    name: string;
+    cardPlayed: string;
+    dieRolled: number;
+    turnOrder: number;
+    score: number;
+  }
+  */
+  
+  /*
+  constructor(private user: DrawCardService) {
+    name: string;
+    card: string;
+  }
+  */
+  
+  //console.log('test');
   
   constructor(private _drawCardService: DrawCardService) {}
   
