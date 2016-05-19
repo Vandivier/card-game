@@ -1,5 +1,6 @@
 # Card Game
-[![Build Status](https://travis-ci.org/theaccordance/card-dealer.svg?branch=master)] (https://travis-ci.org/theaccordance/card-dealer) [![Built with Grunt](https://cdn.gruntjs.com/builtwith.png)](http://gruntjs.com/)
+[//]: # (Commenting this build status thing since it's not really mine but I want to remember how to do it [![Build Status](https://travis-ci.org/theaccordance/card-dealer.svg?branch=master)] (https://travis-ci.org/theaccordance/card-dealer))
+[![Built with Grunt](https://cdn.gruntjs.com/builtwith.png)](http://gruntjs.com/)
 
 It's a card game based on a standard 52 card deck, but it's not poker.
 
